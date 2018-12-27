@@ -56,11 +56,12 @@ public class FresherCandidate extends Candidate{
     }
 
 
+	@Override
+	public String toString() {
+		return "FresherCandidate [graduationDate=" + graduationDate + ", graduationRank=" + graduationRank
+				+ ", education=" + education + ", candidateID=" + candidateID + ", firstName=" + firstName
+				+ ", birtDate=" + birtDate + ", address=" + address + ", phone=" + phone + ", email=" + email
+				+ ", candidateType=" + candidateType + "]";
+	}
 
-    
-    @Override
-    public String toString() {
-        return "FresherCandidate [graduationDate=" + graduationDate + ", graduationRank=" + graduationRank
-                + ", education=" + education + "]";
-    }
 }
