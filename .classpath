@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="candidate/src"/>
+	<classpathentry exported="true" kind="lib" path="candidate/src/libs/com.mysql.jdbc_5.1.5.jar"/>
+	<classpathentry kind="output" path="candidate/bin"/>
+</classpath>

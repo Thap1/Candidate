@@ -14,11 +14,6 @@ public class ExperienceCandidate extends Candidate{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public ExperienceCandidate(int candidateID, String firstName, int birtDate, String address, int phone, String email,
-			String candidateType) {
-		super(candidateID, firstName, birtDate, address, phone, email, candidateType);
-		// TODO Auto-generated constructor stub
-	}
 	public String getExpInYear() {
 		return expInYear;
 	}
