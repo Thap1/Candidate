@@ -21,9 +21,9 @@ public class ExperienceDAL implements InterfaceDAL<ExperienceCandidate> {
 
 
     @Override
-    public int insert(ExperienceCandidate object) {
+    public boolean insert(ExperienceCandidate object) {
         // TODO Auto-generated method stub
-        return 0;
+        return true;
     }
 
 }

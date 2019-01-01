@@ -4,9 +4,23 @@ public class InternCandidate extends Candidate {
     String majors;
     String semester;
     String universityName;
-	public InternCandidate(int candidateID, String firstName, int birtDate, String address, int phone, String email,
-			String candidateType, String majors, String semester, String universityName) {
-		super(candidateID, firstName, birtDate, address, phone, email, candidateType);
+	
+	/**
+	 * @param candidateID
+	 * @param firstName
+	 * @param lastName
+	 * @param birtDate
+	 * @param address
+	 * @param phone
+	 * @param email
+	 * @param candidateType
+	 * @param majors
+	 * @param semester
+	 * @param universityName
+	 */
+	public InternCandidate(int candidateID, String firstName, String lastName, int birtDate, String address, int phone,
+			String email, String candidateType, String majors, String semester, String universityName) {
+		super(candidateID, firstName, lastName, birtDate, address, phone, email, candidateType);
 		this.majors = majors;
 		this.semester = semester;
 		this.universityName = universityName;
@@ -35,9 +49,10 @@ public class InternCandidate extends Candidate {
 	}
 	@Override
 	public String toString() {
-		return "InternCandidate [majors=" + majors + ", semester=" + semester + ", universityName=" + universityName
-				+ ", candidateID=" + candidateID + ", firstName=" + firstName + ", birtDate=" + birtDate + ", address="
-				+ address + ", phone=" + phone + ", email=" + email + ", candidateType=" + candidateType + "]";
+		return "InternCandidate [ candidateID=" + candidateID + ", firstName=" + firstName + ", lastName=" + lastName + ", birtDate="
+				+ birtDate + ", address=" + address + ", phone=" + phone + ", email=" + email + ", candidateType="
+				+ candidateType + ", majors=" + majors + ", semester=" + semester + ", universityName=" + universityName
+						+  "]";
 	}
 	
     
