@@ -59,7 +59,7 @@ public class FresherDAL implements InterfaceDAL<FresherCandidate>{
     public boolean insert(FresherCandidate object) {
         String sql = "insert into candidate values (?,?,?,?,?,?,?,?,?,?,?)";
         try {
-			PreparedStatement prepared = cnn.prepareStatement("insert into candidate values ()");
+			PreparedStatement prepared = cnn.prepareStatement(sql);
 			prepared.setInt(1, object.getCandidateID());
 			prepared.setString(2, object.getFirstName());
 			prepared.setString(3, object.getLastName());
