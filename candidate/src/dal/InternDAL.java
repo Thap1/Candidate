@@ -33,7 +33,7 @@ public class InternDAL implements InterfaceDAL<InternCandidate> {
                 inc.setCandidateType(rs.getString("candidateType"));
                 inc.setMajors(rs.getString("majors"));
                 inc.setSemester(rs.getString("semester"));
-                inc.setUniversityName(rs.getString("university"));
+                inc.setUniversityName(rs.getString("universityName"));
                 list.add(inc);
             }
         } catch (SQLException e) {
@@ -53,7 +53,7 @@ public class InternDAL implements InterfaceDAL<InternCandidate> {
     @Override
     public boolean insert(InternCandidate object) {
         Connection cnn = ConnectDB.connect();
-        String sql = "INSERT INTO `nhansu`.`candidate` (`candidateID`, `firstName`, `lastName`, `birtDate`, `address`, `phone`, `email`, `candidateType`, `majors`, `semester`, `university`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO `nhansu`.`candidate` (`candidateID`, `firstName`, `lastName`, `birtDate`, `address`, `phone`, `email`, `candidateType`, `majors`, `semester`, `universityName`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement pre = cnn.prepareStatement(sql);
 
@@ -65,14 +65,23 @@ public class InternDAL implements InterfaceDAL<InternCandidate> {
             pre.setInt(6, object.getPhone());
             pre.setString(7, object.getEmail());
             pre.setString(8, object.getCandidateType());
-            pre.setString(13, object.getMajors());
-            pre.setString(14, object.getSemester());
-            pre.setString(15, object.getUniversityName());
+            pre.setString(9, object.getMajors());
+            pre.setString(10, object.getSemester());
+            pre.setString(11, object.getUniversityName());
+            pre.executeUpdate();
 
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        finally {
+			try {
+				cnn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
         return true;
     }
 
