@@ -15,12 +15,11 @@ import entity.FresherCandidate;
 import unti.ConnectDB;
 
 public class FresherDAL implements InterfaceDAL<FresherCandidate>{
-    static Connection cnn = ConnectDB.connect();
   
     @Override
     public List<FresherCandidate> getList(String sql) {
         List<FresherCandidate> list = new ArrayList<FresherCandidate>();
-        
+        Connection cnn = ConnectDB.connect();
         try {
             Statement stm = cnn.createStatement();
             ResultSet rs = stm.executeQuery(sql);
@@ -51,13 +50,15 @@ public class FresherDAL implements InterfaceDAL<FresherCandidate>{
     public void show(List<FresherCandidate> object) {
     	for (FresherCandidate fre : object) {
 			System.out.println(fre);
-			System.out.println();
+			
 		}
     }
 
     @Override
     public boolean insert(FresherCandidate object) {
-        String sql = "insert into candidate values (?,?,?,?,?,?,?,?,?,?,?)";
+        Connection cnn = ConnectDB.connect();
+        
+        String sql = "INSERT INTO `nhansu`.`candidate` (`candidateID`, `firstName`, `lastName`, `birtDate`, `address`, `phone`, `email`, `candidateType`, `graduationDate`, `graduationRank`, `education`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
         try {
 			PreparedStatement prepared = cnn.prepareStatement(sql);
 			prepared.setInt(1, object.getCandidateID());

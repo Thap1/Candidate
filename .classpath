@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="src" path="candidate/src"/>
-	<classpathentry exported="true" kind="lib" path="candidate/src/libs/com.mysql.jdbc_5.1.5.jar"/>
+	<classpathentry kind="lib" path="candidate/src/libs/mysql-connector-java-5.1.47.jar"/>
+	<classpathentry kind="lib" path="candidate/src/libs/log4j-1.2.17.jar"/>
 	<classpathentry kind="output" path="candidate/bin"/>
 </classpath>
